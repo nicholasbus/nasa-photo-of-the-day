@@ -1,19 +1,23 @@
 import React from 'react'
 import NasaImage from './NasaImage'
 import ImageData from './ImageData'
+import styled from 'styled-components'
+
+// styled component for wrapper div
+const Div = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
 
 export default (props) => {
     const { data } = props
-    const style = {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center'
-    }
+
     return (
-        <div style={style}>
+        <Div>
             <NasaImage url={data.hdurl}/>
             <ImageData data={data}/>
-        </div>
+        </Div>
     )
 
 }
